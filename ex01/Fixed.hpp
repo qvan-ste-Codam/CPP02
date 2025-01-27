@@ -8,8 +8,8 @@ class Fixed {
     Fixed(const Fixed &rhs);
     Fixed(const int intValue);
     Fixed(const float floatValue);
-    Fixed &operator=(const Fixed &rhs);
     ~Fixed();
+    Fixed &operator=(const Fixed &rhs);
     int getRawBits(void) const;
     void setRawBits(int const raw);
     float toFloat(void) const;

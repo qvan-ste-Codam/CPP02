@@ -8,7 +8,7 @@ int main(void) {
     Fixed c;
     c = b;
     std::cout << "A: " << a.getRawBits() << std::endl;
-    a.setRawBits(100);
+    a.setRawBits(-100);
     std::cout << "A: " << a.getRawBits() << std::endl;
     std::cout << "B: " << b.getRawBits() << std::endl;
     b.setRawBits(10);
