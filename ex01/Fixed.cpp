@@ -1,5 +1,6 @@
 #include "Fixed.hpp"
 
+#include <cmath>
 #include <iostream>
 
 Fixed::Fixed() : value(0) {
@@ -15,7 +16,7 @@ Fixed::Fixed(const int intValue) : value(intValue << nFractBits) {
 }
 
 Fixed::Fixed(const float floatValue)
-    : value(static_cast<int>(roundf(floatValue * (1 << nFractBits)))) {
+    : value(std::roundf(floatValue * (1 << nFractBits))) {
     std::cout << "Float constructor called" << std::endl;
 }
 
@@ -39,7 +40,7 @@ int Fixed::getRawBits(void) const {
     return this->value;
 }
 
-int Fixed::toInt(void) const { return (this->value >> nFractBits); }
+int Fixed::toInt(void) const { return this->value >> nFractBits; }
 
 float Fixed::toFloat(void) const {
     return static_cast<float>(this->value) / (1 << nFractBits);

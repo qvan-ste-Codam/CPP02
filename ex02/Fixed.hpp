@@ -28,6 +28,10 @@ class Fixed {
     void setRawBits(int const raw);
     float toFloat(void) const;
     int toInt(void) const;
+    static Fixed &min(Fixed &fixed1, Fixed &fixed2);
+    static const Fixed &min(const Fixed &fixed1, const Fixed &fixed2);
+    static Fixed &max(Fixed &fixed1, Fixed &fixed2);
+    static const Fixed &max(const Fixed &fixed1, const Fixed &fixed2);
 
    private:
     int value;
@@ -35,4 +39,5 @@ class Fixed {
 };
 
 std::ostream &operator<<(std::ostream &out, const Fixed &fixed);
+
 #endif
